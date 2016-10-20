@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.peoplelist.presentation.beans;
 
 import ch.hearc.ig.odi.peoplelist.service.Services;
+import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -24,6 +25,10 @@ public class PeopleListBean {
      * Creates a new instance of PeopleListBean
      */
     public PeopleListBean() {
+    }
+    
+    public List getPeopleList(){
+        return services.getPeopleList();
     }
     
 }
