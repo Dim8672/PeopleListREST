@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.peoplelist.presentation.beans;
 
 import ch.hearc.ig.odi.peoplelist.service.Services;
+import java.util.Date;
 import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
@@ -17,7 +18,7 @@ import javax.inject.Inject;
  */
 @Named(value = "peopleListBean")
 @RequestScoped
-public class PeopleListBean {
+public class PeopleListBean{
 
     @Inject Services services;
     
@@ -29,6 +30,11 @@ public class PeopleListBean {
     
     public List getPeopleList(){
         return services.getPeopleList();
+    }
+    
+    public String addPerson(String gender, String firstName, String lastName, Boolean married, Date birthDate){
+        services.savePerson(gender, firstName, lastName, married, birthDate);
+        return "index.xhtml";
     }
     
 }
