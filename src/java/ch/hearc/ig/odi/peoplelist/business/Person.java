@@ -50,7 +50,7 @@ public class Person {
         this.lastName = lastName;
     }
 
-    public Boolean isMarried() {
+    public Boolean getMarried() {
         return married;
     }
 
