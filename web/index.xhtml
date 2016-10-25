@@ -3,36 +3,38 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:outputStylesheet library="css" name="style.css"/>
+    <f:loadBundle basename="ch.hearc.ig.odi.peoplelist.presentation.bundle.Resources_fr" var="prop"/>
     <h:head>
-        <title>Facelet Title</title>
+        <title>#{prop.pageHeaderIndex}</title>
     </h:head>
     <h:body>
         <h:dataTable value="#{peopleListBean.peopleList}" var="peopleList">
             <h:column>
-                <f:facet name="header">Id</f:facet>
+                <f:facet class="tab" name="header">#{prop.id}</f:facet>
                     #{peopleList.id}
             </h:column>
 
             <h:column>
-                <f:facet name="header">Gender</f:facet>
+                <f:facet name="header">#{prop.gender}</f:facet>
                     #{peopleList.gender}
             </h:column>
 
             <h:column>
-                <f:facet name="header">First Name</f:facet>
+                <f:facet name="header">#{prop.firstName}</f:facet>
                     #{peopleList.firstName}
             </h:column>
 
             <h:column>
-                <f:facet name="header">Last Name</f:facet>
+                <f:facet name="header">#{prop.lastName}</f:facet>
                     #{peopleList.lastName}
             </h:column>
             <h:column>
-                <f:facet name="header">Birth Date</f:facet>
+                <f:facet name="header">#{prop.birthDate}</f:facet>
                     #{peopleList.birthDate}
             </h:column>
             <h:column>
-                <f:facet name="header">Married2</f:facet>
+                <f:facet name="header">#{prop.married}</f:facet>
                     #{peopleList.married}
             </h:column>
         </h:dataTable>
