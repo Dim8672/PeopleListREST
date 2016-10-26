@@ -7,7 +7,7 @@ import java.util.Date;
  * @author dimitri.mella
  */
 public class Person {
-    
+
     private Long id;
     private String gender;
     private String firstName;
@@ -65,6 +65,5 @@ public class Person {
     public void setBirthDate(Date birthDate) {
         this.birthDate = birthDate;
     }
-    
-    
+
 }

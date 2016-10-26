@@ -5,9 +5,8 @@
  */
 package ch.hearc.ig.odi.peoplelist.presentation.beans;
 
+import ch.hearc.ig.odi.peoplelist.business.Person;
 import ch.hearc.ig.odi.peoplelist.service.Services;
-import java.util.Date;
-import java.util.List;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -16,26 +15,20 @@ import javax.inject.Inject;
  *
  * @author dimitri.mella
  */
-@Named(value = "peopleListBean")
+@Named(value = "personBean")
 @RequestScoped
-public class PeopleListBean{
+public class PersonBean extends Person {
 
     @Inject
     Services services;
-    
-    /**
-     * Creates a new instance of PeopleListBean
-     */
-    public PeopleListBean() {
+
+    public PersonBean() {
+        super();
     }
-    
-    public List getPeopleList(){
-        return services.getPeopleList();
-    }
-    
-    public String addPerson(String gender, String firstName, String lastName, Boolean married, Date birthDate){
-        services.savePerson(gender, firstName, lastName, married, birthDate);
+
+    public String addPerson() {
+        services.savePerson(this.getGender(), this.getFirstName(), this.getLastName(), this.getMarried(), this.getBirthDate());
         return "index.xhtml";
     }
-    
+
 }
