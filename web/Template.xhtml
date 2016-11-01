@@ -9,21 +9,17 @@
         <h:outputStylesheet name="css/default.css"/>
         <h:outputStylesheet name="css/cssLayout.css"/>
         <h:outputStylesheet name="css/style.css"/>
-        <title>Facelets Template</title>
+        <title><ui:insert name="title">Titre</ui:insert></title>
     </h:head>
 
     <h:body>
         <ui:debug/>
-        <div class="top">
-            <ui:insert name="top"/>
+        <div id="top" class="top">
+            <ui:insert name="top">Top</ui:insert>
         </div>
 
         <div id="content" class="center_content">
             <ui:insert name="content">Content</ui:insert>
-        </div>
-        
-        <div id="formulaire">
-            <ui:insert name="formulaire">Formulaire</ui:insert>
         </div>
 
     </h:body>
