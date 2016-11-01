@@ -2,45 +2,56 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:outputStylesheet library="css" name="style.css"/>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:outputStylesheet library="css" name="default.css"/>
+    <h:outputStylesheet library="css" name="cssLayout.css"/>
     <f:loadBundle basename="ch.hearc.ig.odi.peoplelist.presentation.bundle.Resources_fr" var="prop"/>
     <h:head>
         <title>#{prop.pageHeaderIndex}</title>
     </h:head>
     <h:body>
-        <h:dataTable value="#{peopleListBean.peopleList}" var="peopleList">
-            <h:column>
-                <f:facet class="tab" name="header">#{prop.id}</f:facet>
-                    #{peopleList.id}
-            </h:column>
+        <ui:composition template="Template.xhtml">
+            <ui:define name="content">
+                <h:dataTable value="#{peopleListBean.peopleList}" var="peopleList" 
+                             styleClass="people-table"
+                             headerClass="people-table-header"
+                             rowClasses="people-table-odd-row,people-table-even-row">
+                    <h:column>
+                        <f:facet class="tab" name="header">#{prop.id}</f:facet>
+                            #{peopleList.id}
+                    </h:column>
 
-            <h:column>
-                <f:facet name="header">#{prop.gender}</f:facet>
-                    #{peopleList.gender}
-            </h:column>
+                    <h:column>
+                        <f:facet name="header">#{prop.gender}</f:facet>
+                            #{peopleList.gender}
+                    </h:column>
 
-            <h:column>
-                <f:facet name="header">#{prop.firstName}</f:facet>
-                    #{peopleList.firstName}
-            </h:column>
+                    <h:column>
+                        <f:facet name="header">#{prop.firstName}</f:facet>
+                            #{peopleList.firstName}
+                    </h:column>
 
-            <h:column>
-                <f:facet name="header">#{prop.lastName}</f:facet>
-                    #{peopleList.lastName}
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{prop.birthDate}</f:facet>
-                    #{peopleList.birthDate}
-            </h:column>
-            <h:column>
-                <f:facet name="header">#{prop.married}</f:facet>
-                    #{peopleList.married}
-            </h:column>
-        </h:dataTable>
-        <h:form>
-            <h:commandButton value="Add Someone" action="addForm"/>
-        </h:form>
+                    <h:column>
+                        <f:facet name="header">#{prop.lastName}</f:facet>
+                            #{peopleList.lastName}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{prop.birthDate}</f:facet>
+                            #{peopleList.birthDate}
+                    </h:column>
+                    <h:column>
+                        <f:facet name="header">#{prop.married}</f:facet>
+                            #{peopleList.married}
+                    </h:column>
+                </h:dataTable>
+            </ui:define>
+            <ui:define name="formulaire">
+                <h:form>
+                    <h:commandButton value="Add Someone" action="addForm"/>
+                </h:form>
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
 

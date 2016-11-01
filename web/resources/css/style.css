@@ -1,8 +1,22 @@
-table
-{
-    border-collapse: collapse;
+.people-table{
+	border-collapse:collapse;
 }
-td, th /* Mettre une bordure sur les td ET les th */
-{
-    border: 1px solid black;
+
+.people-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+
+.people-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+
+.people-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
 }
