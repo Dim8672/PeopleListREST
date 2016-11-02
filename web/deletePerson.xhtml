@@ -11,15 +11,14 @@
                 #{prop.pageHeaderRemove}
             </ui:define>
             <ui:define name="content">
-                <h:selectOneMenu value="#{delPerson.delPerson}">
-                    <f:converter binding="#{personLOVConverter}"/>
-                    <f:selectItems value="#{peopleListBean.peopleList}" var="peopleList"
-   			itemLabel="#{peopleList.lastName}" itemValue="#{peopleList.id}" />
-                </h:selectOneMenu>
                 <h:form>
+                    <h:selectOneMenu value="#{delPerson.delPerson}">
+                        <f:converter binding="#{personLOVConverter}"/>
+                        <f:selectItems value="#{peopleListBean.peopleList}" var="peopleList" itemLabel="#{peopleList.lastName}"/>
+                    </h:selectOneMenu>
                     <h:commandButton value="Delete" action="#{delPerson.deletePerson()}"/>
-                </h:form>
-            </ui:define>
+                </h:form>    
+            </ui:define>    
         </ui:composition>
     </h:body>
 </html>

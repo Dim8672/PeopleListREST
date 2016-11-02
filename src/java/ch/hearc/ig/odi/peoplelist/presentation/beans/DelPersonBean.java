@@ -26,7 +26,7 @@ public class DelPersonBean  {
      * Creates a new instance of DelPerson
      */
     public DelPersonBean() {
-        this.delPerson = null;
+
     }
     
     public void setDelPerson(Person person){
