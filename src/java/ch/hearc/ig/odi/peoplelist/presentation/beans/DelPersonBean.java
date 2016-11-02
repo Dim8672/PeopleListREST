@@ -29,7 +29,18 @@ public class DelPersonBean  {
         this.delPerson = null;
     }
     
-    public deletePerson(Person)
+    public void setDelPerson(Person person){
+        this.delPerson = person;
+    }
+    
+    public Person getDelPerson(){
+        return delPerson;
+    }
+    
+    public String deletePerson(){
+        services.deletePerson(delPerson);
+        return "index.xhtml";
+    }
     
     
     

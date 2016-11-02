@@ -11,13 +11,13 @@
                 #{prop.pageHeaderRemove}
             </ui:define>
             <ui:define name="content">
-                <h:selectOneMenu>
+                <h:selectOneMenu value="#{delPerson.delPerson}">
                     <f:converter binding="#{personLOVConverter}"/>
                     <f:selectItems value="#{peopleListBean.peopleList}" var="peopleList"
    			itemLabel="#{peopleList.lastName}" itemValue="#{peopleList.id}" />
                 </h:selectOneMenu>
                 <h:form>
-                    <h:commandButton value="Delete" action="delPersonBean.deletePerson()"/>
+                    <h:commandButton value="Delete" action="#{delPerson.deletePerson()}"/>
                 </h:form>
             </ui:define>
         </ui:composition>
