@@ -1,6 +1,8 @@
 package ch.hearc.ig.odi.peoplelist.business;
 
 import java.util.Date;
+import java.util.Properties;
+import javax.validation.constraints.NotNull;
 
 /**
  *
@@ -12,6 +14,7 @@ public class Person {
     private String gender;
     private String firstName;
     private String lastName;
+    //@NotNull(message=...) pour interdire le null
     private Boolean married;
     private Date birthDate;
 
