@@ -12,7 +12,7 @@
             </ui:define>
             <ui:define name="content">
                 <h:form>
-                    #{prop.gender} :<h:inputText title="gender" value="#{personBean.gender}" required="true" requiredMessage="#{prop.genderRequired}"><br/>
+                    #{prop.gender} :<h:inputText title="gender" value="#{personBean.gender}" required="true" requiredMessage="#{prop.genderRequired}"/><br/>
                     #{prop.firstName} :<h:inputText value="#{personBean.firstName}" required="true" requiredMessage="#{prop.firstnameRequired}"/><br/>
                     #{prop.lastName} :<h:inputText value="#{personBean.lastName}" required="true" requiredMessage="#{prop.lastNameRequired}"/><br/>
                     #{prop.married} :<h:selectOneRadio value="#{personBean.married}" ><br/>
